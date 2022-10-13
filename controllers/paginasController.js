@@ -5,16 +5,19 @@ import { Viaje } from "../models/Viaje.js"
 
 const paginaInicio = async (req,res)=>{
 
-    // consultar 3 viajes de la bd: 
+    // consultar 3 viajes de la bd:
+    //usar PromiseAll cuando son multiples Await
+    const promesaDB = []
+    promesaDB.push( Viaje.findAll({ limit:3 }) )
+    promesaDB.push( Testimonial.findAll({ limit:3 }) )
 
     try {
-        const viajes = await Viaje.findAll({ limit:3 })
-        const testimoniales = await Testimonial.findAll({ limit:3 })
+        const resultado = await Promise.all( promesaDB )
         res.render('inicio',{
             pagina: 'Inicio XD',
             clase: 'home',
-            viajes,
-            testimoniales
+            viajes: resultado[0],
+            testimoniales: resultado[1]
         })
     } catch (error) {
         console.log(error);
