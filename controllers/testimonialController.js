@@ -19,16 +19,17 @@ const guardarTestimonial = async (req,res) =>{
     }
 
     if (errores.length > 0) {
+        const testimoniales = await Testimonial.findAll()
         res.render('testimoniales',{
             pagina: 'Testimonios',
             errores,
             nombre,
             correo,
-            mensaje
+            mensaje,
+            testimoniales
         })
     } else {
         //Almacenar en la bd
-
         try {
             await Testimonial.create({
                 nombre,

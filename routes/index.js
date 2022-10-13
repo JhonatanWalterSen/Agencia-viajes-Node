@@ -1,9 +1,9 @@
 import express from 'express';
-import { 
+import {
     paginaInicio,
-    paginaNosotros, 
-    paginaViajes, 
-    paginaTestimoniales, 
+    paginaNosotros,
+    paginaViajes,
+    paginaTestimoniales,
     paginaDetalleViaje
 }from '../controllers/paginasController.js';
 import { guardarTestimonial } from '../controllers/testimonialController.js';

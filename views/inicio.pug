@@ -1,27 +1,28 @@
 extend  ./layout/index
+block slider
+    .slider
+        h1 Rio de Janeiro
+        em aventura
 block contenido
     main.container.mt-5
-        .row
-            .col-md-5
-                img(src="img/nosotros.jpg", alt="nostros", class="img-fluid")
-            .col-md-7
-                h1= pagina
-                blockquote  Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique eius earum nihil assumenda veritatis molestiae beatae repudiandae, tenetur, et ad sint maiores, non aliquid doloribus enim eligendi possimus iure quos.
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reiciendis ipsa possimus, ad architecto, officiis, tempore quis quaerat aspernatur veniam ullam atque illum labore omnis animi nisi sit molestias magnam.
-                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod illum suscipit ratione provident ullam, assumenda, minus nihil asperiores enim non, incidunt a saepe magnam sit. Dolorem, veritatis cum! Doloremque?
-    .listado-iconos
-        .container.mt-5.py-5.text-center
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5
+            .col-md-6
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deserunt incidunt reprehenderit voluptatibus ab nam mollitia, sed deleniti, hic minima accusamus nemo ut possimus nisi quo explicabo, voluptas dolorem eos.
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="imagen sobre-nosotros", class="img-fluid")
+        include ./layout/bloque_viajes
+
+    .descuento
+        .container
             .row
-                .col-md-4
-                    img(src="img/icono_seguridad.svg", alt="Iconos seguridad", class="img-fluid mb-4")
-                    h2.mb-4 Seguridad
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maiores atque illum nisi totam. Odit error exercitationem neque, perspiciatis in repellendus impedit voluptatibus inventore, officiis vero eveniet nobis illum nemo!
-                .col-md-4
-                    img(src="img/icono_destinos.svg", alt="Iconos destinos", class="img-fluid mb-4")
-                    h2.mb-4 Mejores destinos
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maiores atque illum nisi totam. Odit error exercitationem neque, perspiciatis in repellendus impedit voluptatibus inventore, officiis vero eveniet nobis illum nemo!
-                .col-md-4
-                    img(src="img/icono_precios.svg", alt="Iconos precios", class="img-fluid mb-4")
-                    h2.mb-4 Los mejores precios
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit maiores atque illum nisi totam. Odit error exercitationem neque, perspiciatis in repellendus impedit voluptatibus inventore, officiis vero eveniet nobis illum nemo!
-                    
+                .col-md-6
+                    .contenido
+                        h3 5% de Descuento
+                        p.titulo Viaje a Canada
+                        p.fecha 20 de marzo de 2022 - 28 de Marzo de 2022
+                        p.precio S/ 7000
+
+    .container
+        h2.mt-5.text-center Testimonios
+        include ./layout/bloque_testimoniales
